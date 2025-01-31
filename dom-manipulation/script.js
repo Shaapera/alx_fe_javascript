@@ -55,7 +55,7 @@ let quotes = [
   }
   
   // Add New Quote
-  function addQuote() {
+  function creeatAddQuoteForm() {
     const text = newQuoteText.value.trim();
     const category = newQuoteCategory.value.trim();
   
