@@ -73,4 +73,4 @@ let quotes = [
   
   // Event Listeners
   showQuoteBtn.addEventListener('click', showRandomQuote);
-  addQuoteBtn.addEventListener('click', addQuote);
+  addQuoteBtn.addEventListener('click', creeatAddQuoteForm);
