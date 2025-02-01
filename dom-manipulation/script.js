@@ -48,21 +48,23 @@ function addQuote() {
     categorySelect.innerHTML = categories
       .map((category) => `<option value="${category}">${category}</option>`)
       .join('');
+  const text = [...new Set(quotes.map((quotes) => quotes.text))];
+  
 };
 function showRandomQuote() {
   const selectedCategory = categorySelect.value;
-    const filteredQuotes = quotes.filter((quote) => quote.category === selectedCategory);
+  const filteredQuotes = quotes.filter((quote) => quote.category === selectedCategory);
   
-    if (filteredQuotes.length > 0) {
-      const randomQuote = filteredQuotes[Math.floor(Math.random() * filteredQuotes.length)];
-      quoteDisplay.innerHTML = `<p>"${randomQuote.text}"</p><p><em>- ${randomQuote.category}</em></p>`;
-    } else {
-      quoteDisplay.innerHTML = `<p>No quotes available for this category.</p>`;
+  if (filteredQuotes.length > 0) {
+    const randomQuote = filteredQuotes[Math.floor(Math.random() * filteredQuotes.length)];
+    quoteDisplay.innerHTML = `<p>"${randomQuote.text}"</p><p><em>- ${randomQuote.category}</em></p>`;
+  } else {
+    quoteDisplay.innerHTML = `<p>No quotes available for this category.</p>`;
   
-}
+  }
 
 
-/*let quotes = [
+  let quotes = [
     { text: "The only limit to our realization of tomorrow is our doubts of today.", category: "Inspiration" },
     { text: "In the middle of difficulty lies opportunity.", category: "Motivation" },
     { text: "Life is 10% what happens to us and 90% how we react to it.", category: "Life" },
@@ -99,7 +101,7 @@ function showRandomQuote() {
   }
   
   // Add New Quote
-  function creeatAddQuoteForm() {
+  function createAddQuoteForm() {
     const text = newQuoteText.value.trim();
     const category = newQuoteCategory.value.trim();
   
@@ -117,4 +119,5 @@ function showRandomQuote() {
   
   // Event Listeners
   showQuoteBtn.addEventListener('click', showRandomQuote);
-  addQuoteBtn.addEventListener('click', creeatAddQuoteForm);
+  addQuoteBtn.addEventListener('click', createAddQuoteForm)
+};
