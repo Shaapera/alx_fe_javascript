@@ -34,14 +34,18 @@ const quotes = [
 function createAddQuoteForm() {
   const text = newQuoteText.value.trim();
   const category = newQuoteCategory.value.trim();
+  const adds = document.createElement('newQuotesText');
+  adds.textContent = newQuoteText;
   if (text && category !== '') {
     addQuote();
   } else {
     console.log('enter new quote and category');
   };
-
+  adds.appendChild(newQuoteText);
 
 };
+
+//creating quotes
 
 function addQuote() {
   const categories = [...new Set(quotes.map((quote) => quote.category))]; // Get unique categories
@@ -79,13 +83,13 @@ function showRandomQuote() {
   const addQuoteBtn = document.getElementById('addQuoteBtn');
   
   // Populate Categories in the Dropdown
-  function populateCategories() {
+  /*function populateCategories() {
     const categories = [...new Set(quotes.map((quote) => quote.category))]; // Get unique categories
     categorySelect.innerHTML = categories
       .map((category) => `<option value="${category}">${category}</option>`)
       .join('');
   }
-  populateCategories();
+  populateCategories();*/
   
   // Show Random Quote
   function showRandomQuote() {
