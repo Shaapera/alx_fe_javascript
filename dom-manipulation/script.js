@@ -31,7 +31,7 @@ const quotes = [
   },
 
 ];//created an arry object but empty
-function creeatAddQuoteForm() {
+function createAddQuoteForm() {
   const text = newQuoteText.value.trim();
   const category = newQuoteCategory.value.trim();
   if (text && category !== '') {
